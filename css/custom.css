@@ -1,0 +1,133 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+span {
+    font-family: 'Markazi Text', serif;
+}
+
+p {
+    font-family: 'Jost', serif;
+    font-weight: 300;
+}
+
+.health-insurance-keys li {
+    font-family: 'Jost', serif;
+    font-weight: 300;
+    padding: 10px 0px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.custom-delay-100 {
+    animation-delay: 0.1s; /* Adjust to your preferred delay time */
+}
+
+.custom-delay-200 {
+    animation-delay: 0.2s; /* Adjust to your preferred delay time */
+}
+
+.custom-delay-300 {
+    animation-delay: 0.3s; /* Adjust to your preferred delay time */
+}
+
+.custom-delay-400 {
+    animation-delay: 0.4s; /* Adjust to your preferred delay time */
+}
+
+.custom-delay-500 {
+    animation-delay: 0.5s; /* Adjust to your preferred delay time */
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #17a2b8;
+}
+
+footer p,
+footer h5 {
+    margin-bottom: 10px;
+}
+
+.sm-break {
+    height: 2px;
+    background-color: #f1f1f1;
+    margin: 15px auto;
+    width: 100px;
+}
+
+.key-header, .key-content {
+    font-family: 'Jost', serif;
+    font-weight: 300;
+}
+
+.key-header {
+    font-weight: 500;
+}
+
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.insurance-content {
+    background-image: url('../images/life_insurance_background.jpg');
+}
+
+.insurance-content .card {
+    justify-content: space-between;
+    height: 100%;
+    text-align: center;
+    border-radius: 1.25rem;
+}
+
+.insurance-content #life-ins, .demat-content #demat-ins {
+    color: white;
+    text-shadow: 2px 2px 3px black;
+}
+
+.demat-content {
+    background-image: url('../images/demat_account_background.jpg');
+}
+
+.home-banner {
+    background-color: #cedff9;
+}
+
+#home-tagline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #1e367c;
+    font-size: 1.15rem;
+}
+
+#home-tagline span {
+    font-family: "Young Serif", serif;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 5px #5a73c4;
+    font-size: 2rem;
+}
+
+.navbar-nav .nav-link, .navbar-nav .dropdown-item {
+    font-family: 'Jost', serif;
+    font-weight: 500;
+}
+
+.navbar-nav .dropdown-item {
+    color: rgba(0, 0, 0, .5);
+}
+
+.navbar-nav .dropdown-item:hover {
+    color: rgba(0, 0, 0, .7);
+}
+
+@media screen and (max-width: 600px) {
+    #home-tagline span, #home-tagline p {
+        font-size: 14px;
+    }
+}
