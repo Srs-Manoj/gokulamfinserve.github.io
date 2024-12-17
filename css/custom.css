@@ -130,6 +130,10 @@ footer h5 {
     color: rgba(0, 0, 0, .7);
 }
 
+.navbar, .navbar-brand img {
+    transition: 0.4s;
+}
+
 @media screen and (max-width: 600px) {
     #home-tagline span, #home-tagline p {
         font-size: 14px;

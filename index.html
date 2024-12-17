@@ -52,14 +52,14 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 sticky-top">
         <div class="container">
             <a class="navbar-brand py-2" href="#">
-                <img src="images/new_logo.png" width="90" height="60" alt="">
+                <img src="images/new_logo.png" alt="" style="width: 80px; height: 60px;">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav text-center">
                     <li class="nav-item">
                         <a class="nav-link" href="#mutual-funds">Mutual Fund<span class="sr-only">(current)</span></a>
                     </li>
@@ -87,6 +87,7 @@
                             <a class="dropdown-item" href="#corp-ins">Corporate FD Deposit</a>
                             <a class="dropdown-item" href="#ncd-ins">NCD (Non-Convertible Debentures)</a>
                             <a class="dropdown-item" href="#port-ins">Portfolio Management Services</a>
+                            <a class="dropdown-item" href="#footer_bar">Contact Us</a>
                         </div>
                     </li>
                 </ul>
@@ -390,7 +391,7 @@
         </div>
     </div>
       
-    <footer class="bg-dark text-light py-4">
+    <footer id="footer_bar" class="bg-dark text-light py-4">
         <div class="container">
             <div class="row">
                 <!-- Company Info -->
@@ -405,7 +406,7 @@
                     <ul class="list-unstyled">
                         <li><a href="index.html" class="text-light text-decoration-none"><p class="m-0">Home</p></a></li>
                         <li><a href="#mutual-funds" class="text-light text-decoration-none"><p class="m-0">Services</p></a></li>
-                        <li><a href="#contact-us" class="text-light text-decoration-none"><p class="m-0">Contact Us</p></a></li>
+                        <li><a href="#footer_bar" class="text-light text-decoration-none"><p class="m-0">Contact Us</p></a></li>
                     </ul>
                 </div>
                 <!-- Contact Info -->
@@ -488,6 +489,59 @@
                 );
             }
         });
+
+        // To hide the nav bar when links clicked in mobile view starts
+        // Select all nav-link elements, including dropdown items
+        const navLinks = document.querySelectorAll('.nav-link');
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Collapse the navbar only if it's not a dropdown toggle or dropdown item
+                if (
+                    !link.classList.contains('dropdown-toggle') && 
+                    !link.closest('.dropdown') && 
+                    navbarCollapse.classList.contains('show')
+                ) {
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    navbarToggler.click();
+                }
+            });
+        });
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Collapse the navbar when a dropdown item is clicked
+                if (navbarCollapse.classList.contains('show')) {
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    navbarToggler.click();
+                }
+            });
+        });
+        // To hide the nav bar when links clicked in mobile view ends
+
+        // To shrinks the nav bar when scroll starts
+        window.onscroll = function() {
+            shrinkNav();
+        }
+
+        function shrinkNav() {
+            if(document.body.scrollTop > 75 || document.documentElement.scrollTop > 75) {
+                $(".navbar").removeClass("p-3");
+                if($('.navbar-toggler').is(':visible'))
+                    $(".navbar").addClass("p-2");
+                else 
+                    $(".navbar").addClass("p-0");
+                $(".navbar .navbar-brand ").find("img").css({"width":"70px","height":"50px"})
+            } else {
+                $(".navbar").removeClass("p-0");
+                $(".navbar").removeClass("p-2");
+                $(".navbar").addClass("p-3");
+                $(".navbar .navbar-brand ").find("img").css({"width":"80px","height":"60px"})
+            }
+        }
+        // To shrinks the nav bar when scroll ends
 
     </script>
 </body>
