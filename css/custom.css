@@ -157,7 +157,7 @@ div:has(> img[class*="iphone"]) {
     background-color: #818385;
     color: white;
     border: none;
-    /* border-radius: 50%; */
+    border-radius: 50%;
     padding: 5px 15px;
     font-size: 20px;
     cursor: pointer;
